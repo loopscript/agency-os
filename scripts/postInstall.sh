@@ -15,12 +15,8 @@ apt install nodejs npx -y
 apt install jq -y
 apt-get install expect
 
-$nodeVersion=$(cd /root/.nvm/versions/node && ls -d */)
-
 cat <<EOT > ./scripts/expect.sh
 #!/usr/bin/env expect
-
-set npx_path "/root/.nvm/versions/node/${$nodeVersion}bin/npx"
 
 spawn npx directus-template-cli@latest apply
 
