@@ -6,9 +6,11 @@ echo "Waiting for software to be ready ..."
 sleep 60s;
 
 # Install nodejs
-curl -sL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh
-bash nodesource_setup.sh
-apt install nodejs
+# curl -sL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh
+# bash nodesource_setup.sh
+# apt install nodejs
+
+apt install nodejs npx -y
 
 apt install jq -y
 apt-get install expect
@@ -20,7 +22,7 @@ cat <<EOT > ./scripts/expect.sh
 
 set npx_path "/root/.nvm/versions/node/${$nodeVersion}bin/npx"
 
-spawn \$npx_path directus-template-cli@latest apply
+spawn npx directus-template-cli@latest apply
 
 expect "Ok to proceed? (y)" { send "y\r" }
 
