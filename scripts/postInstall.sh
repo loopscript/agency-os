@@ -13,6 +13,8 @@ apt install nodejs
 apt install jq -y
 apt-get install expect
 
+sleep 120s;
+
 npxPath=$(wich npx)
 echo "______________________________________________________"
 echo "______________________________________________________"
