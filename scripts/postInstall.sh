@@ -60,5 +60,6 @@ curl  -X PATCH \
 
 docker-compose exec -T directus sh -c "/scripts/inContainer.sh"
 
-docker-compose down;
-docker-compose up -d;
+sleep 180s;
+# docker-compose down;
+# docker-compose up -d;
