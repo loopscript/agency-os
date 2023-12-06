@@ -21,10 +21,12 @@ apt install nodejs
 apt install jq -y
 apt-get install expect
 
+nodePath=$(which npx)
+
 cat <<EOT > ./scripts/expect.sh
 #!/usr/bin/env expect
 
-spawn npx directus-template-cli@latest apply
+spawn ${nodePath} directus-template-cli@latest apply
 
 expect "Ok to proceed? (y)" { send "y\r" }
 

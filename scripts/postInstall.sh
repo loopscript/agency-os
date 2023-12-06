@@ -43,10 +43,8 @@ curl  -X PATCH \
 
 sleep 30s;
 
-nodePath=$(which node)
-
-echo $nodePath
-
-export PATH=$PATH:$nodePath
 
 expect ./scripts/expect.sh
+
+docker-compose down;
+docker-compose up -d;
