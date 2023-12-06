@@ -33,6 +33,7 @@ config:
   screenshot: "agency-os.png"
 lifeCycleConfig:
   preInstallCommand: "./scripts/preInstall.sh"
+  postInstallCommand: "./scripts/postInstall.sh"
 webUI:
   - url: "https://[CI_CD_DOMAIN]"
     label: "Agency OS Admin"
