@@ -41,5 +41,6 @@ curl  -X PATCH \
   "token":"'${ADMIN_PASSWORD}'"
 }'
 
+sleep 30s;
 
 expect ./scripts/expect.sh
