@@ -13,34 +13,3 @@ chmod 777 ./extensions/displays;
 mkdir -p ./data;
 chmod 777 ./data;
 
-# Install nodejs
-curl -sL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh
-bash nodesource_setup.sh
-apt install nodejs
-
-apt install jq -y
-apt-get install expect
-
-nodePath=$(which npx)
-
-cat <<EOT > ./scripts/expect.sh
-#!/usr/bin/env expect
-
-spawn ${nodePath} directus-template-cli@latest apply
-
-expect "Ok to proceed? (y)" { send "y\r" }
-
-expect "What type of template would you like to apply?" { send "1\r" }
-
-expect "Select a template." { send "1\r" }
-
-expect "What is your Directus URL?" { send "https://${DOMAIN}\r" }
-
-expect "What is your Directus Admin Token?" { send "${ADMIN_PASSWORD}\r" }
-
-interact
-
-EOT
-
-
-chmod +x ./scripts/expect.sh
