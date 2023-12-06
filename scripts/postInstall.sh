@@ -12,38 +12,16 @@ sleep 60s;
 
 # apt install nodejs npx -y
 
-apt-get update
-apt-get install -y ca-certificates curl gnupg
-mkdir -p /etc/apt/keyrings
-curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+# apt-get update
+# apt-get install -y ca-certificates curl gnupg
+# mkdir -p /etc/apt/keyrings
+# curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
 
-NODE_MAJOR=20
-echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+# NODE_MAJOR=20
+# echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
 
 apt install jq -y
-apt-get install expect
 
-cat <<EOT > ./scripts/expect.sh
-#!/usr/bin/env expect
-
-spawn npx directus-template-cli@latest apply
-
-expect "Ok to proceed? (y)" { send "y\r" }
-
-expect "What type of template would you like to apply?" { send "1\r" }
-
-expect "Select a template." { send "1\r" }
-
-expect "What is your Directus URL?" { send "https://${DOMAIN}\r" }
-
-expect "What is your Directus Admin Token?" { send "${ADMIN_PASSWORD}\r" }
-
-interact
-
-EOT
-
-
-chmod +x ./scripts/expect.sh
 
 
 # Set admin token process
@@ -80,7 +58,7 @@ curl  -X PATCH \
 }'
 
 
-expect ./scripts/expect.sh
+docker-compose exec -T directus sh -c "/scripts/inContainer.sh"
 
 docker-compose down;
 docker-compose up -d;
