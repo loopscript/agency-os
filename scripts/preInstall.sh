@@ -18,6 +18,7 @@ cat <<EOT > ./scripts/inContainer.sh
 
 apk add expect;
 expect /scripts/expect.sh
+expect /scripts/expect.sh
 EOT
 
 cat <<EOT > ./scripts/expect.sh
