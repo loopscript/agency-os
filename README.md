@@ -4,7 +4,7 @@
 
 Example CI/CD pipeline showing how to deploy a direct instance to elestio.
 
-<img src="agency-os.jpg" style='width: 100%;'/>
+<img src="agency-os.png" style='width: 100%;'/>
 <br/>
 <br/>
 
