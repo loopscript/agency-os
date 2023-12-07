@@ -18,7 +18,7 @@ bash nodesource_setup.sh
 apt install nodejs
 
 apt install jq -y
-apt-get install expect
+apt-get install expect -y
 
 
 cat <<EOT > ./scripts/expect.sh
