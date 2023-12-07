@@ -30,6 +30,8 @@ expect "Ok to proceed? (y)" { send "y\r" }
 
 expect "What type of template would you like to apply?" { send "1\r" }
 
+expect "What type of template would you like to apply? (Use arrow keys)" { send "1\r" }
+
 expect "Select a template." { send "1\r" }
 
 expect "What is your Directus URL?" { send "https://${DOMAIN}\r" }
