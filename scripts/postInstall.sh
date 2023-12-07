@@ -5,23 +5,6 @@ set -o allexport; source .env; set +o allexport;
 echo "Waiting for software to be ready ..."
 sleep 60s;
 
-# Install nodejs
-# curl -sL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
-# bash nodesource_setup.sh
-# apt install nodejs
-
-# apt install nodejs npx -y
-
-# apt-get update
-# apt-get install -y ca-certificates curl gnupg
-# mkdir -p /etc/apt/keyrings
-# curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
-
-# NODE_MAJOR=20
-# echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
-
-apt install jq -y
-
 
 
 # Set admin token process
@@ -57,9 +40,5 @@ curl  -X PATCH \
   "token":"'${ADMIN_PASSWORD}'"
 }'
 
-
-docker-compose exec -T directus sh -c "/scripts/inContainer.sh"
-
-sleep 180s;
-# docker-compose down;
-# docker-compose up -d;
+docker-compose down;
+docker-compose up -d;

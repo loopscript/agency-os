@@ -13,8 +13,14 @@ Example CI/CD pipeline showing how to deploy a direct instance to elestio.
 You can connect to the Agency OS Dashboard:
 
     Access URL: https://[CI_CD_DOMAIN]/
-    Login: [ADMIN_EMAIL] (set in env var)
-    Password: [ADMIN_PASSWORD] (set in env var)
+    Login: [ADMIN_EMAIL]
+    Password: [ADMIN_PASSWORD]
+
+# First use
+
+To install Agency OS you'll have to connect to SSH, (click on `Open terminal` button on the top right of the screen), and enter this:
+
+        expect ./scripts/expect.sh
 
 # Note
 

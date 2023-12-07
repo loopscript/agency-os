@@ -13,13 +13,13 @@ chmod 777 ./extensions/displays;
 mkdir -p ./data;
 chmod 777 ./data;
 
+curl -sL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh
+bash nodesource_setup.sh
+apt install nodejs
 
-cat <<EOT > ./scripts/inContainer.sh
+apt install jq -y
+apt-get install expect
 
-apk add expect;
-expect /scripts/expect.sh
-expect /scripts/expect.sh
-EOT
 
 cat <<EOT > ./scripts/expect.sh
 #!/usr/bin/env expect
@@ -44,4 +44,3 @@ EOT
 
 
 chmod +x ./scripts/expect.sh
-chmod +x ./scripts/inContainer.sh

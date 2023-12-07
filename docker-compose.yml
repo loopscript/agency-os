@@ -25,7 +25,6 @@ services:
     volumes:
       - ./uploads:/directus/uploads
       - ./extensions:/directus/extensions
-      - ./scripts:/scripts
     networks:
       - directus
     depends_on:
