@@ -22,6 +22,8 @@ To install Agency OS you'll have to connect to SSH, (click on `Open terminal` bu
 
         expect ./scripts/expect.sh
 
+Please refrain from interacting with the SSH terminal during the installation process, as it may take some time.
+
 # Note
 
 By default, it is preloaded with version 9.26.0, and subsequent versions will be accompanied by a BSL license. For additional information on the Directus BSL license, you can check <a href="https://directus.io/bsl">here.</a>
