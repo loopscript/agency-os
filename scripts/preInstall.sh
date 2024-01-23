@@ -15,7 +15,7 @@ chmod 777 ./data;
 
 curl -sL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh
 bash nodesource_setup.sh
-apt install nodejs
+apt install nodejs -y
 
 apt install jq -y
 apt-get install expect -y
