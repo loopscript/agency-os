@@ -16,13 +16,48 @@ You can connect to the Agency OS Dashboard:
     Login: [ADMIN_EMAIL]
     Password: [ADMIN_PASSWORD]
 
-# First use
+# Installation Steps
 
-To install Agency OS you'll have to connect to SSH, (click on `Open terminal` button on the top right of the screen), and enter this:
+Welcome to the installation guide for Agency OS! Follow the steps below to set up Agency OS on your Directus instance.
 
-        expect ./scripts/expect.sh
+1. Open Terminal:
 
-Please refrain from interacting with the SSH terminal during the installation process, as it may take some time.
+- Connect to your server via SSH.
+- Click on the `Open terminal` button located at the top right of the screen.
+
+2. Run Installation Command:
+
+- Execute the following command in the terminal:
+
+      npx directus-template-cli@latest apply
+
+3. Answer the Questions:
+
+- After running the command, you will be prompted with a series of questions.
+
+      What type of template would you like to apply?
+
+- Choose: `Official templates`
+
+      Select a template.
+
+- Choose: `AgencyOS`
+
+      What is your Directus URL?
+
+- Type: `https://[CI_CD_DOMAIN]`
+
+      What is your Directus Admin Token?
+
+- Type: `[ADMIN_PASSWORD]`
+
+4. Wait for Installation:
+
+- Allow the installation process to complete. This may take some time depending on your internet connection and server specifications.
+
+5. Verification:
+
+- Once the installation is complete, verify that Agency OS has been successfully installed on your Directus instance.
 
 # Note
 

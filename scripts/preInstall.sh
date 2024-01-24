@@ -21,26 +21,26 @@ apt install jq -y
 apt-get install expect -y
 
 
-cat <<EOT > ./scripts/expect.sh
-#!/usr/bin/env expect
+# cat <<EOT > ./scripts/expect.sh
+# #!/usr/bin/env expect
 
-spawn npx directus-template-cli@latest apply
+# spawn npx directus-template-cli@latest apply
 
-expect "Ok to proceed? (y)" { send "y\r" }
+# expect "Ok to proceed? (y)" { send "y\r" }
 
-expect "What type of template would you like to apply?" { send "1\r" }
+# expect "What type of template would you like to apply?" { send "1\r" }
 
-expect "What type of template would you like to apply? (Use arrow keys)" { send "1\r" }
+# expect "What type of template would you like to apply? (Use arrow keys)" { send "1\r" }
 
-expect "Select a template." { send "1\r" }
+# expect "Select a template." { send "1\r" }
 
-expect "What is your Directus URL?" { send "https://${DOMAIN}\r" }
+# expect "What is your Directus URL?" { send "https://${DOMAIN}\r" }
 
-expect "What is your Directus Admin Token?" { send "${ADMIN_PASSWORD}\r" }
+# expect "What is your Directus Admin Token?" { send "${ADMIN_PASSWORD}\r" }
 
-interact
+# interact
 
-EOT
+# EOT
 
 
-chmod +x ./scripts/expect.sh
+# chmod +x ./scripts/expect.sh
